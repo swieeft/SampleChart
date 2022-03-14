@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4H2-4i-WQd">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="TUO-pM-qBj">
+            <objects>
+                <navigationController id="4H2-4i-WQd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="obS-d5-NDd">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cSr-kI-YKh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGh-1W-mio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="-499"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfX-me-Atz">
+                                <rect key="frame" x="172.33333333333334" y="188" width="83.333333333333343" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pie Chart"/>
+                                <connections>
+                                    <segue destination="fu4-Z6-enu" kind="show" id="7Nd-yf-2l9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-pv-jR2">
+                                <rect key="frame" x="171.33333333333334" y="319" width="85.333333333333343" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Bar Chart"/>
+                                <connections>
+                                    <segue destination="i1a-d4-f1q" kind="show" id="6oM-KN-IGZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MfX-me-Atz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="BDl-8n-wOw"/>
+                            <constraint firstItem="R1E-pv-jR2" firstAttribute="top" secondItem="MfX-me-Atz" secondAttribute="bottom" constant="100" id="PpP-Gz-jhy"/>
+                            <constraint firstItem="MfX-me-Atz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m4O-Ki-rd0"/>
+                            <constraint firstItem="R1E-pv-jR2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m97-e5-PP2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MRV-dE-Udp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="483" y="-500"/>
+        </scene>
+        <!--Bar Chart View Controller-->
+        <scene sceneID="DLu-k4-mqH">
+            <objects>
+                <viewController id="i1a-d4-f1q" customClass="BarChartViewController" customModule="SampleCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0TC-mE-uWg">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-Qx-SzR">
+                                <rect key="frame" x="50" y="138" width="328" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-S7-P6s">
+                                        <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="30"/>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.71764705880000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Food">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="foodFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="gPr-yg-OT0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vk-cs-Raz">
+                                        <rect key="frame" x="114.33333333333334" y="0.0" width="99.333333333333343" height="30"/>
+                                        <color key="backgroundColor" red="0.46666666670000001" green="0.46274509800000002" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sleep">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sleepFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="Okl-di-7NM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5im-bm-9UF">
+                                        <rect key="frame" x="228.66666666666671" y="0.0" width="99.333333333333343" height="30"/>
+                                        <color key="backgroundColor" red="0.72941176470000002" green="0.5568627451" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Defecation">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="defecationFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="rKM-qv-oHC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="h2W-S7-P6s" firstAttribute="width" secondItem="5im-bm-9UF" secondAttribute="width" id="Azs-GA-ax3"/>
+                                    <constraint firstItem="h2W-S7-P6s" firstAttribute="width" secondItem="1Vk-cs-Raz" secondAttribute="width" id="c4g-yf-rK2"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sx-b6-ozE" customClass="BarChartView" customModule="SampleCharts" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="218" width="428" height="428"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0sx-b6-ozE" secondAttribute="height" id="flk-6s-Rzt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qxT-bH-KBD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qxT-bH-KBD" firstAttribute="trailing" secondItem="vpR-Qx-SzR" secondAttribute="trailing" constant="50" id="0w7-Id-wJZ"/>
+                            <constraint firstItem="vpR-Qx-SzR" firstAttribute="leading" secondItem="qxT-bH-KBD" secondAttribute="leading" constant="50" id="IIb-ki-C5y"/>
+                            <constraint firstItem="vpR-Qx-SzR" firstAttribute="top" secondItem="qxT-bH-KBD" secondAttribute="top" constant="50" id="ZZs-qt-r7O"/>
+                            <constraint firstItem="qxT-bH-KBD" firstAttribute="trailing" secondItem="0sx-b6-ozE" secondAttribute="trailing" id="aWN-O0-khY"/>
+                            <constraint firstItem="0sx-b6-ozE" firstAttribute="leading" secondItem="qxT-bH-KBD" secondAttribute="leading" id="kez-ES-sNd"/>
+                            <constraint firstItem="0sx-b6-ozE" firstAttribute="top" secondItem="vpR-Qx-SzR" secondAttribute="bottom" constant="50" id="oVc-zx-LSU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="t6C-q0-RRE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KS9-Rm-gi6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="-122"/>
+        </scene>
+        <!--Pie Chart View Controller-->
+        <scene sceneID="kEP-qt-61A">
+            <objects>
+                <viewController id="fu4-Z6-enu" customClass="PieChartViewController" customModule="SampleCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zq5-fs-J1E">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="yYc-Jc-UjI">
+                                <rect key="frame" x="0.0" y="88" width="428" height="428"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yYc-Jc-UjI" secondAttribute="height" id="3y6-Y3-XI7"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIn-e3-hPl" customClass="PieChartView" customModule="SampleCharts" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="428" height="428"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VIn-e3-hPl" secondAttribute="height" id="rti-sW-g6w"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f4e-hj-mMT">
+                                <rect key="frame" x="50" y="566" width="328" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQq-n8-dke" customClass="FilterButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="30"/>
+                                        <color key="backgroundColor" red="0.91764705882352937" green="0.71764705882352942" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Food">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="foodFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="u9x-em-DEY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d28-Nd-mOI" customClass="FilterButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="114.33333333333334" y="0.0" width="99.333333333333343" height="30"/>
+                                        <color key="backgroundColor" red="0.46666666666666667" green="0.46274509803921571" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sleep">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sleepFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="o3c-vw-hO5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5d-XX-Nbc" customClass="FilterButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="228.66666666666671" y="0.0" width="99.333333333333343" height="30"/>
+                                        <color key="backgroundColor" red="0.72941176470588232" green="0.55686274509803924" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Defecation">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="defecationFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="yNB-A7-DWn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uQq-n8-dke" firstAttribute="width" secondItem="Y5d-XX-Nbc" secondAttribute="width" id="AJW-jb-xlN"/>
+                                    <constraint firstItem="uQq-n8-dke" firstAttribute="width" secondItem="d28-Nd-mOI" secondAttribute="width" id="Whq-EV-BV1"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pCa-Yg-nhQ">
+                                <rect key="frame" x="73" y="646" width="282" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-lq-sHV" customClass="MockDataButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="PoL-Dk-Tws"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="firstDataSet:" destination="fu4-Z6-enu" eventType="touchUpInside" id="zRO-l3-bCe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh6-FI-ipX" customClass="MockDataButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secondDataSet:" destination="fu4-Z6-enu" eventType="touchUpInside" id="Nm2-Fy-eiK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re7-34-zGX" customClass="MockDataButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="116" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="thirdDataSet:" destination="fu4-Z6-enu" eventType="touchUpInside" id="xRX-2H-QDZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loo-Sb-bWP" customClass="MockDataButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="174" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fourthDataSet:" destination="fu4-Z6-enu" eventType="touchUpInside" id="XEY-u6-Ptb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6t-U1-a0M" customClass="MockDataButton" customModule="SampleCharts" customModuleProvider="target">
+                                        <rect key="frame" x="232" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fifthDataSet:" destination="fu4-Z6-enu" eventType="touchUpInside" id="HUp-UK-uE7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="K9i-lq-sHV" firstAttribute="width" secondItem="loo-Sb-bWP" secondAttribute="width" id="0WA-VJ-oKX"/>
+                                    <constraint firstItem="K9i-lq-sHV" firstAttribute="width" secondItem="fh6-FI-ipX" secondAttribute="width" id="6OR-Ox-nGB"/>
+                                    <constraint firstItem="K9i-lq-sHV" firstAttribute="width" secondItem="H6t-U1-a0M" secondAttribute="width" id="8rl-sz-qSW"/>
+                                    <constraint firstAttribute="height" constant="50" id="Jkr-b1-gCc"/>
+                                    <constraint firstItem="K9i-lq-sHV" firstAttribute="width" secondItem="re7-34-zGX" secondAttribute="width" id="u7j-3A-Vff"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nhd-rX-bJY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f4e-hj-mMT" firstAttribute="leading" secondItem="nhd-rX-bJY" secondAttribute="leading" constant="50" id="4Pl-WY-2vI"/>
+                            <constraint firstItem="nhd-rX-bJY" firstAttribute="trailing" secondItem="VIn-e3-hPl" secondAttribute="trailing" id="EIX-wX-BWy"/>
+                            <constraint firstItem="pCa-Yg-nhQ" firstAttribute="top" secondItem="f4e-hj-mMT" secondAttribute="bottom" constant="50" id="KWe-mN-k4v"/>
+                            <constraint firstItem="pCa-Yg-nhQ" firstAttribute="centerX" secondItem="zq5-fs-J1E" secondAttribute="centerX" id="N4T-Ca-lbv"/>
+                            <constraint firstItem="f4e-hj-mMT" firstAttribute="top" secondItem="yYc-Jc-UjI" secondAttribute="bottom" constant="50" id="Qw1-X7-Pjk"/>
+                            <constraint firstItem="VIn-e3-hPl" firstAttribute="top" secondItem="nhd-rX-bJY" secondAttribute="top" id="XCK-Gc-O57"/>
+                            <constraint firstItem="yYc-Jc-UjI" firstAttribute="top" secondItem="nhd-rX-bJY" secondAttribute="top" id="aqx-EX-xb3"/>
+                            <constraint firstItem="VIn-e3-hPl" firstAttribute="leading" secondItem="nhd-rX-bJY" secondAttribute="leading" id="cqy-oz-f3V"/>
+                            <constraint firstItem="nhd-rX-bJY" firstAttribute="trailing" secondItem="f4e-hj-mMT" secondAttribute="trailing" constant="50" id="fwZ-gC-sHE"/>
+                            <constraint firstItem="yYc-Jc-UjI" firstAttribute="leading" secondItem="nhd-rX-bJY" secondAttribute="leading" id="lgx-R2-WmR"/>
+                            <constraint firstItem="nhd-rX-bJY" firstAttribute="trailing" secondItem="yYc-Jc-UjI" secondAttribute="trailing" id="y2Q-0A-OtU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Dh-Os-iLH"/>
+                    <connections>
+                        <outlet property="chartView" destination="VIn-e3-hPl" id="38p-Hy-lhy"/>
+                        <outlet property="defecationFilterButton" destination="Y5d-XX-Nbc" id="tL3-dC-GFB"/>
+                        <outlet property="fifthDataButton" destination="H6t-U1-a0M" id="zeD-Xk-8Dt"/>
+                        <outlet property="firstDataButton" destination="K9i-lq-sHV" id="e07-nM-5m2"/>
+                        <outlet property="foodFilterButton" destination="uQq-n8-dke" id="Iot-Ho-ceT"/>
+                        <outlet property="fourthDataButton" destination="loo-Sb-bWP" id="1Nr-oI-RXQ"/>
+                        <outlet property="secondDataButton" destination="fh6-FI-ipX" id="nFZ-u9-vzY"/>
+                        <outlet property="sleepFilterButton" destination="d28-Nd-mOI" id="O8r-81-AAf"/>
+                        <outlet property="thirdDataButton" destination="re7-34-zGX" id="OFI-wK-Mwj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQa-T4-khc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="-780"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="time" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
