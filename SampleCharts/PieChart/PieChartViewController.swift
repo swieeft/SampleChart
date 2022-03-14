@@ -165,54 +165,5 @@ class PieChartViewController: UIViewController {
     }
 }
 
-class FilterButton: UIButton {
-    private var currentBackgroundColor: UIColor?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        buttonInit()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        buttonInit()
-    }
-    
-    private func buttonInit() {
-        currentBackgroundColor = backgroundColor
-        
-        layer.cornerRadius = 8
-        layer.masksToBounds = true
-        backgroundColor = isSelected ? currentBackgroundColor : .lightGray
-    }
-    
-    override var isSelected: Bool {
-        didSet {
-            backgroundColor = isSelected ? currentBackgroundColor : .lightGray
-        }
-    }
-}
 
-class MockDataButton: UIButton {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        buttonInit()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        buttonInit()
-    }
-    
-    private func buttonInit() {
-        layer.cornerRadius = 8
-        layer.masksToBounds = true
-        backgroundColor = isSelected ? .darkGray : .lightGray
-    }
-    
-    override var isSelected: Bool {
-        didSet {
-            backgroundColor = isSelected ? .darkGray : .lightGray
-        }
-    }
-}
+

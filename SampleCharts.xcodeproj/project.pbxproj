@@ -13,6 +13,8 @@
 		2F767A6827DB2AD9009B45E2 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F767A6727DB2AD9009B45E2 /* BarChartViewController.swift */; };
 		2F767A6A27DB2C0C009B45E2 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F767A6927DB2C0C009B45E2 /* BarChartView.swift */; };
 		2F767A6D27DB4AEB009B45E2 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F767A6C27DB4AEB009B45E2 /* Date+Extension.swift */; };
+		2FC694DA27DF3B84006B1261 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC694D927DF3B84006B1261 /* FilterButton.swift */; };
+		2FC694DC27DF3B98006B1261 /* MockDataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC694DB27DF3B98006B1261 /* MockDataButton.swift */; };
 		2FCA2C2427DAD047005D8364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA2C2327DAD047005D8364 /* AppDelegate.swift */; };
 		2FCA2C2627DAD047005D8364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA2C2527DAD047005D8364 /* SceneDelegate.swift */; };
 		2FCA2C2827DAD047005D8364 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA2C2727DAD047005D8364 /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		2F767A6727DB2AD9009B45E2 /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		2F767A6927DB2C0C009B45E2 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		2F767A6C27DB4AEB009B45E2 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		2FC694D927DF3B84006B1261 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		2FC694DB27DF3B98006B1261 /* MockDataButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataButton.swift; sourceTree = "<group>"; };
 		2FCA2C2027DAD047005D8364 /* SampleCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCA2C2327DAD047005D8364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FCA2C2527DAD047005D8364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		2FC694D827DF3B76006B1261 /* CustomControl */ = {
+			isa = PBXGroup;
+			children = (
+				2FC694D927DF3B84006B1261 /* FilterButton.swift */,
+				2FC694DB27DF3B98006B1261 /* MockDataButton.swift */,
+			);
+			path = CustomControl;
+			sourceTree = "<group>";
+		};
 		2FCA2C1727DAD046005D8364 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +115,7 @@
 		2FCA2C2227DAD047005D8364 /* SampleCharts */ = {
 			isa = PBXGroup;
 			children = (
+				2FC694D827DF3B76006B1261 /* CustomControl */,
 				2F767A6B27DB4AE2009B45E2 /* Extension */,
 				2F767A6327DB21CA009B45E2 /* Model */,
 				2F767A5E27DB2141009B45E2 /* PieChart */,
@@ -193,12 +207,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FCA2C2827DAD047005D8364 /* ViewController.swift in Sources */,
+				2FC694DC27DF3B98006B1261 /* MockDataButton.swift in Sources */,
 				2F767A6227DB217B009B45E2 /* PieChartView.swift in Sources */,
 				2FCA2C2427DAD047005D8364 /* AppDelegate.swift in Sources */,
 				2F767A6827DB2AD9009B45E2 /* BarChartViewController.swift in Sources */,
 				2F767A6027DB2170009B45E2 /* PieChartViewController.swift in Sources */,
 				2F767A6527DB21D1009B45E2 /* ChartData.swift in Sources */,
 				2FCA2C2627DAD047005D8364 /* SceneDelegate.swift in Sources */,
+				2FC694DA27DF3B84006B1261 /* FilterButton.swift in Sources */,
 				2F767A6A27DB2C0C009B45E2 /* BarChartView.swift in Sources */,
 				2F767A6D27DB4AEB009B45E2 /* Date+Extension.swift in Sources */,
 			);
