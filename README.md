@@ -1,2 +1,8 @@
 # SampleChart
-다양한 차트에 대한 샘플 정리
+> 차트 샘플 정리
+
+<br>
+
+## 1. PieChart
+---
+<img src="Resource/PieChart.gif" width="300"/>
