@@ -28,6 +28,9 @@ class PieChartView: UIView {
     private var startAngle: CGFloat = 0
     private var radius: CGFloat = 0
     
+    
+    var paths: [CGPath: ChartData] = [:]
+    
     var days: Int = 0 {
         didSet {
             label.text = "D+\n\(days)"
@@ -57,32 +60,57 @@ class PieChartView: UIView {
         label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let position = touch.location(in: self)
+            paths.forEach { key, value in
+                if key.contains(position) {
+                    print("\(value.type)")
+                }
+            }
+        }
+        
+    }
+    
     // MARK: - Draw
     override func draw(_ rect: CGRect) {
+        paths.removeAll()
+        
         centerPoint = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         // 차트 시작 포인트 - 0시
         startPoint = CGPoint(x: centerPoint.x, y: centerPoint.y * 0.55)
         radius = calculateRadius(center: centerPoint, start: startPoint)
         startAngle = calculateStartAngle(center: centerPoint, point: startPoint, radius: radius)
         
+//        let arc = UIBezierPath()
+//        arc.move(to: startPoint)
+//        arc.addArc(withCenter: centerPoint, radius: radius, startAngle: startAngle, endAngle: ((3 * .pi) / 2), clockwise: true)
+//
+//        // 색상이나 두께는 디자인 가이드에 맞춰서 변경 필요
+//        emptyColor.setStroke()
+//        arc.lineWidth = 100
+//        arc.stroke()
+        
+//        paths.append(arc)
+        
         if datas.count > 0 {
             drawEmptyStartTime()
-            
+
             var beforeData: ChartData?
-            
+
             datas.forEach { data in
                 // 이전 데이터의 종료 시간과 현재 데이터의 시작 시간이 다르다면 중간에 빈 값을 그려줌
                 if let beforeData = beforeData, beforeData.time.end.totalMinute != data.time.start.totalMinute {
                     drawEmptyTime(beforeEndTime: beforeData.time.end, currentStartTime: data.time.start)
                 }
-                
+
                 drawDataTime(data: data)
                 beforeData = data
             }
-            
+
             drawEmptyEndTime(beforeData: beforeData)
         } else {
-            drawArc(endAngle: (3 * .pi) / 2, color: emptyColor)
+            drawArc(endAngle: (3 * .pi) / 2, color: emptyColor, data: nil)
         }
     }
     
@@ -94,7 +122,7 @@ class PieChartView: UIView {
             let angle = CGFloat(data.time.start.totalMinute) * 0.25
             let endAngle = calculateEndAngle(startAngle: startAngle, angle: angle)
 
-            drawArc(endAngle: endAngle, color: emptyColor)
+            drawArc(endAngle: endAngle, color: emptyColor, data: nil)
         }
     }
     
@@ -103,7 +131,7 @@ class PieChartView: UIView {
         let angle = calculateEmptyAngle(beforeEndTime: end, currentStartTime: start)
         let endAngle = calculateEndAngle(startAngle: startAngle, angle: angle)
 
-        drawArc(endAngle: endAngle, color: emptyColor)
+        drawArc(endAngle: endAngle, color: emptyColor, data: nil)
     }
     
     // 입력된 데이터를 그려줌
@@ -111,7 +139,7 @@ class PieChartView: UIView {
         let endAngle = calculateEndAngle(startAngle: startAngle, angle: data.time.angle)
         let color = filter[data.type] == true ? emptyColor : data.type.color
 
-        drawArc(endAngle: endAngle, color: color)
+        drawArc(endAngle: endAngle, color: color, data: data)
     }
     
     // 마지막 데이터가 24시로 끝나지 않을 경우 마지막 데이터의 끝 시간부터 24시까지 빈 값을 그려줌
@@ -120,12 +148,12 @@ class PieChartView: UIView {
             let angle = calculateEmptyAngle(beforeEndTime: beforeData.time.end, currentStartTime: midnight)
             let endAngle = calculateEndAngle(startAngle: startAngle, angle: angle)
             
-            drawArc(endAngle: endAngle, color: emptyColor)
+            drawArc(endAngle: endAngle, color: emptyColor, data: nil)
         }
     }
 
     // 실제 Arc를 그려 데이터를 표시
-    private func drawArc(endAngle: CGFloat, color: UIColor) {
+    private func drawArc(endAngle: CGFloat, color: UIColor, data: ChartData?) {
         let arc = UIBezierPath()
         arc.move(to: startPoint)
         arc.addArc(withCenter: centerPoint, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
@@ -134,6 +162,13 @@ class PieChartView: UIView {
         color.setStroke()
         arc.lineWidth = 100
         arc.stroke()
+        
+        // UIBezierPath로 touch event를 잡을 경우 lineWidth가 적용 안 된 부분만 touch가 잡혀서 strokingWithWidth로 path를 copy해서 저장함
+        let copyArc = arc.cgPath.copy(strokingWithWidth: arc.lineWidth, lineCap: arc.lineCapStyle, lineJoin: arc.lineJoinStyle, miterLimit: arc.miterLimit)
+        
+        if let data = data {
+            paths[copyArc] = data
+        }
         
         startPoint = arc.currentPoint
         startAngle = endAngle
