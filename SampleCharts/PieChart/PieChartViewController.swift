@@ -60,18 +60,24 @@ class PieChartViewController: UIViewController {
     }
     
     @IBAction func firstDataSet(_ sender: MockDataButton) {
-        let datas = [ChartData(type: .sleep, time: ChartData.Time(startH: 0, startM: 0, endH: 8, endM: 30)),
-                           ChartData(type: .food, time: ChartData.Time(startH: 9, startM: 0, endH: 9, endM: 30)),
-                           ChartData(type: .defecation, time: ChartData.Time(startH: 10, startM: 30, endH: 10, endM: 35)),
-                           ChartData(type: .sleep, time: ChartData.Time(startH: 11, startM: 5, endH: 12, endM: 53)),
-                           ChartData(type: .food, time: ChartData.Time(startH: 13, startM: 0, endH: 13, endM: 30)),
-                           ChartData(type: .defecation, time: ChartData.Time(startH: 14, startM: 10, endH: 14, endM: 15)),
-                           ChartData(type: .sleep, time: ChartData.Time(startH: 14, startM: 45, endH: 16, endM: 0)),
-                           ChartData(type: .defecation, time: ChartData.Time(startH: 16, startM: 0, endH: 16, endM: 05)),
-                           ChartData(type: .food, time: ChartData.Time(startH: 18, startM: 0, endH: 18, endM: 30)),
-                           ChartData(type: .defecation, time: ChartData.Time(startH: 19, startM: 15, endH: 19, endM: 20)),
-                           ChartData(type: .food, time: ChartData.Time(startH: 20, startM: 0, endH: 20, endM: 30)),
-                           ChartData(type: .sleep, time: ChartData.Time(startH: 20, startM: 30, endH: 23, endM: 0))]
+//        let datas = [ChartData(type: .sleep, time: ChartData.Time(startH: 0, startM: 0, endH: 8, endM: 30)),
+//                           ChartData(type: .food, time: ChartData.Time(startH: 9, startM: 0, endH: 9, endM: 30)),
+//                           ChartData(type: .defecation, time: ChartData.Time(startH: 10, startM: 30, endH: 10, endM: 35)),
+//                           ChartData(type: .sleep, time: ChartData.Time(startH: 11, startM: 5, endH: 12, endM: 53)),
+//                           ChartData(type: .food, time: ChartData.Time(startH: 13, startM: 0, endH: 13, endM: 30)),
+//                           ChartData(type: .defecation, time: ChartData.Time(startH: 14, startM: 10, endH: 14, endM: 15)),
+//                           ChartData(type: .sleep, time: ChartData.Time(startH: 14, startM: 45, endH: 16, endM: 0)),
+//                           ChartData(type: .defecation, time: ChartData.Time(startH: 16, startM: 0, endH: 16, endM: 05)),
+//                           ChartData(type: .food, time: ChartData.Time(startH: 18, startM: 0, endH: 18, endM: 30)),
+//                           ChartData(type: .defecation, time: ChartData.Time(startH: 19, startM: 15, endH: 19, endM: 20)),
+//                           ChartData(type: .food, time: ChartData.Time(startH: 20, startM: 0, endH: 20, endM: 30)),
+//                           ChartData(type: .sleep, time: ChartData.Time(startH: 20, startM: 30, endH: 23, endM: 0))]
+        
+        let datas = [ChartData(type: .sleep, time: ChartData.Time(startH: 10, startM: 0, endH: 15, endM: 0)),
+                     ChartData(type: .food, time: ChartData.Time(startH: 10, startM: 0, endH: 10, endM: 50)),
+                     ChartData(type: .defecation, time: ChartData.Time(startH: 10, startM: 0, endH: 10, endM: 40)),
+                     ChartData(type: .food, time: ChartData.Time(startH: 13, startM: 0, endH: 13, endM: 30)),
+                     ChartData(type: .defecation, time: ChartData.Time(startH: 13, startM: 0, endH: 13, endM: 20))]
         
         setChartData(days: 100, datas: datas, button: sender)
     }
