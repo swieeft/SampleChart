@@ -8,6 +8,11 @@
 import UIKit
 
 extension Date {
+    var days: Int {
+        let calendar = Calendar.current
+        return calendar.component(.day, from: self)
+    }
+    
     var hour: Int {
         let calendar = Calendar.current
         return calendar.component(.hour, from: self)

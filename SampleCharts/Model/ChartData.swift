@@ -40,20 +40,6 @@ struct ChartData {
         var angle: CGFloat {
             return CGFloat(end.totalMinute - start.totalMinute) * 0.25
         }
-        
-        var height: CGFloat {
-            let calendar = Calendar.current
-            
-            let startHour = calendar.component(.hour, from: start)
-            let startMinute = calendar.component(.minute, from: start)
-            let s = (startHour * 60) + startMinute
-            
-            let endHour = calendar.component(.hour, from: end)
-            let endMinute = calendar.component(.minute, from: end)
-            let e = (endHour * 60) + endMinute
-            
-            return CGFloat(e - s)
-        }
     }
 }
 

@@ -29,15 +29,6 @@ class PieChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        foodFilterButton.layer.cornerRadius = 6
-        foodFilterButton.layer.masksToBounds = true
-        
-        sleepFilterButton.layer.cornerRadius = 6
-        sleepFilterButton.layer.masksToBounds = true
-        
-        defecationFilterButton.layer.cornerRadius = 6
-        defecationFilterButton.layer.masksToBounds = true
     }
     
     @IBAction func foodFilter(_ sender: FilterButton) {

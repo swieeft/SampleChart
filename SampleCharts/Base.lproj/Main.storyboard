@@ -76,39 +76,42 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-Qx-SzR">
                                 <rect key="frame" x="50" y="138" width="328" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-S7-P6s">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-S7-P6s" customClass="FilterButton" customModule="SampleCharts" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="30"/>
                                         <color key="backgroundColor" red="0.91764705879999997" green="0.71764705880000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Food">
+                                        <state key="normal" title="수유">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="foodFilter:" destination="i1a-d4-f1q" eventType="touchUpInside" id="1nx-i9-Zkb"/>
                                             <action selector="foodFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="gPr-yg-OT0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vk-cs-Raz">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vk-cs-Raz" customClass="FilterButton" customModule="SampleCharts" customModuleProvider="target">
                                         <rect key="frame" x="114.33333333333334" y="0.0" width="99.333333333333343" height="30"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.46274509800000002" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Sleep">
+                                        <state key="normal" title="수면">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="sleepFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="Okl-di-7NM"/>
+                                            <action selector="sleepFilter:" destination="i1a-d4-f1q" eventType="touchUpInside" id="z6r-aa-2r7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5im-bm-9UF">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5im-bm-9UF" customClass="FilterButton" customModule="SampleCharts" customModuleProvider="target">
                                         <rect key="frame" x="228.66666666666671" y="0.0" width="99.333333333333343" height="30"/>
                                         <color key="backgroundColor" red="0.72941176470000002" green="0.5568627451" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Defecation">
+                                        <state key="normal" title="배변">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="defecationFilter:" destination="i1a-d4-f1q" eventType="touchUpInside" id="4li-Wa-3X4"/>
                                             <action selector="defecationFilter:" destination="fu4-Z6-enu" eventType="touchUpInside" id="rKM-qv-oHC"/>
                                         </connections>
                                     </button>
@@ -138,6 +141,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t6C-q0-RRE"/>
+                    <connections>
+                        <outlet property="chartView" destination="0sx-b6-ozE" id="t2Z-Gk-zIk"/>
+                        <outlet property="defecationFilterButton" destination="5im-bm-9UF" id="1CY-kr-OBi"/>
+                        <outlet property="foodFilterButton" destination="h2W-S7-P6s" id="SJr-x1-UZK"/>
+                        <outlet property="sleepFilterButton" destination="1Vk-cs-Raz" id="FNM-L6-Sah"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KS9-Rm-gi6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
